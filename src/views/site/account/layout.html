@@ -1,0 +1,62 @@
+<header class="col-lg-12">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a ui-sref="app.site.home">
+                <img id="logo" src="img/logo.png" alt="Fairfax Brasil Seguros Corporativos" title="Fairfax Brasil Seguros Corporativos" />
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a ui-sref="app.site.home">Home</a>
+                </li>
+                <li class="dropdown" open-hover>
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Anderson Saraiva
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a ui-sref="app.site.home">Sair</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main class="page-content container">
+    <div class="col-sm-3 col-xs-12">
+        <div class="list-group">
+            <div class="list-group-item">
+                <div class="list-group-item-icon">
+                    <img src="img/svg-user.svg" class="svg-user" alt="SVG User">
+                </div>
+                <div class="list-group-item-detail">
+                    <label>Anderson Saraiva Lima</label>
+                    <a ui-sref="app.site.home">Sair</a>
+                </div>
+            </div>
+
+            <a ui-sref="app.account.home" ui-sref-active="active" class="list-group-item">Minha Conta</a>
+            <a ui-sref="app.account.registerUser" ui-sref-active="active" class="list-group-item">Cadastro de Usuário</a>
+            <a ui-sref="app.account.registerOrganizationChart" ui-sref-active="active" class="list-group-item">Cadastro de Organograma</a>
+            <a ui-sref="app.account.registerNews" ui-sref-active="active" class="list-group-item">Cadastro de Notícias</a>  
+            <a ui-sref="app.account.registerGroupNews" ui-sref-active="active" class="list-group-item">Cadastro de Grupos de Notícias</a>         
+        </div>
+    </div>
+    <div class="col-sm-9 col-xs-12 painel-container">
+        <div class="row">
+            <div class="page-breadcrumbs" ncy-breadcrumb></div>
+        </div>        
+        <div class="panel panel-default" ui-view></div>
+    </div>
+</main>
+    
+<a href="javascript:void" scroll-to-top-button title="Clique para ir ao início"><i class="fa fa-level-up"></i></a>

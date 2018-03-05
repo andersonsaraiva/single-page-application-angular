@@ -1,0 +1,81 @@
+<div uib-carousel active="site.active" interval="site.myInterval" no-wrap="site.noWrapSlides">
+    <div uib-slide ng-repeat="slide in site.slides track by slide.id" index="slide.id">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+            <h2>{{slide.text}}</h2>
+        </div>
+    </div>
+</div>
+
+<section class="grey-bg aniversariantes">
+    <div class="container">
+        <h1 id="telaAniversariantes" class="titulo">
+            <span class="texto">Aniversariantes do Mês</span>
+            <span class="separador">
+                <span class="linha1"></span>
+                <i class="fa fa-leaf"></i>
+                <span class="linha1"></span>
+            </span>
+        </h1>
+        <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-12" ng-repeat="pessoa in site.aniversariantes">
+                <div class="team-member" title="{{pessoa.Nome}}">
+                    <div class="member-pic">
+                        <img ng-src="{{pessoa.Imagem}}" alt="{{pessoa.Nome}}">
+                    </div>
+                    <div class="member-details">
+                        <h5>
+                            {{pessoa.Nome}}
+                        </h5>
+                        <div>
+                            {{pessoa.Cargo}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container organograma">
+    <h1 id="telaOrganograma" class="titulo">
+        <span class="texto">Organograma</span>
+        <span class="separador">
+            <span class="linha1"></span>
+            <i class="fa fa-leaf"></i>
+            <span class="linha1"></span>
+        </span>
+    </h1>
+</section>
+
+<section class="noticias">
+    <div class="container">
+        <h1 id="telaNoticias" class="titulo">
+            <span class="texto">Notícias</span>
+            <span class="separador">
+                <span class="linha1"></span>
+                <i class="fa fa-leaf"></i>
+                <span class="linha1"></span>
+            </span>
+        </h1>
+        <div class="row">
+            <div class="col-sm-4 col-md-3 col-xs-12" ng-repeat="noticia in site.noticias">
+                <div class="thumbnail">
+                    <img src="{{noticia.Imagem}}" alt="{{noticia.Titulo}}">
+                    <div class="caption">
+                        <h3>{{noticia.Titulo}}</h3>
+                        <p>{{noticia.Descricao}}</p>
+                        <a href="javasccript:void(0)" title="Continue Lendo">Continue Lendo →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <a class="btn btn-default btn-lg" ng-click="site.verTodasNoticias()">
+                    Ver todas Notícias <i class="fa fa-long-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

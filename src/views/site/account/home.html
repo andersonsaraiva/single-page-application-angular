@@ -1,0 +1,94 @@
+<div class="row">
+    <h2 class="col-md-12">Minha conta</h2>
+</div>
+<form class="form-horizontal" name="form" novalidate>
+    <fieldset>
+        <div class="form-group" ng-class="{ 'has-error': form.Nome.$invalid && (form.$submitted || form.Nome.$touched) }">
+            <label class="col-md-3 control-label">Nome*</label>
+            <div class="col-md-8">
+                <input type="text" ng-model="homeAccount.usuarioModel.Nome" class="form-control input-sm" name="Nome" id="Nome" required>
+                <div ng-show="form.$submitted || form.Nome.$touched">
+                    <div class="text-danger" ng-show="form.Nome.$error.required">Esse campo é obrigatório</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.Email.$invalid && (form.$submitted || form.Email.$touched) }">
+            <label class="col-md-3 control-label">Email*</label>
+            <div class="col-md-8">
+                <input type="email" ng-model="homeAccount.usuarioModel.Email" class="form-control input-sm" name="Email" id="Email" required>
+                <div ng-show="form.$submitted || form.Email.$touched">
+                    <div class="text-danger" ng-show="form.Email.$error.required">Esse campo é obrigatório</div>
+                    <div class="text-danger" ng-show="form.Email.$error.email">Digite um endereço de e-mail válido</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-hide="homeAccount.changingPassword">
+            <label class="col-md-3 control-label">Senha:</label>
+            <div class="col-md-8">
+                <label class="control-label">*********</label>
+                <button type="button" class="btn btn-success btn-xs" ng-click="homeAccount.changePassword()"><i class="fa fa-edit"></i></button>
+            </div>
+        </div>
+        <div ng-if="homeAccount.changingPassword">
+            <div class="form-group" ng-class="{ 'has-error': form.currentPassword.$invalid && (form.$submitted || form.currentPassword.$touched) }">
+                <label class="col-md-3 control-label">Senha Atual*</label>
+                <div class="col-md-8">
+                    <input type="password" 
+                           autocomplete="new-password" 
+                           ng-model="homeAccount.changePasswordModel.currentPassword" 
+                           class="form-control input-sm"
+                           name="currentPassword" 
+                           id="currentPassword" 
+                           required>
+                    <div ng-show="form.$submitted || form.currentPassword.$touched">
+                        <div class="text-danger" ng-show="form.currentPassword.$error.required">Esse campo é obrigatório</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': form.newPassword.$invalid && (form.$submitted || form.newPassword.$touched) }">
+                <label class="col-md-3 control-label">Nova Senha*</label>
+                <div class="col-md-8">
+                    <input type="password" 
+                           ng-minlength="6" 
+                           autocomplete="new-password" 
+                           ng-model="homeAccount.changePasswordModel.newPassword" 
+                           class="form-control input-sm" 
+                           name="newPassword"
+                           id="newPassword" 
+                           required>
+                    <div ng-show="form.$submitted || form.newPassword.$touched">
+                        <div class="text-danger" ng-show="form.newPassword.$error.required">Esse campo é obrigatório</div>
+                        <div class="text-danger" ng-show="form.newPassword.$error.minlength">A senha deve conter no minimo 6 caracteres.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': form.confirmNewPassword.$invalid && (form.$submitted || form.confirmNewPassword.$touched) }">
+                <label class="col-md-3 control-label">Confirme sua Senha*</label>
+                <div class="col-md-8">
+                    <input type="password" 
+                           autocomplete="new-password" 
+                           ng-model="homeAccount.changePasswordModel.confirmNewPassword" 
+                           class="form-control input-sm"
+                           name="confirmNewPassword" 
+                           id="confirmNewPassword" 
+                           ui-validate='"homeAccount.validatePassword($value, homeAccount.changePasswordModel.newPassword)"' 
+                           ui-validate-watch="homeAccount.usuarioModel.newPassword" 
+                           required>
+                    <div ng-show="form.$submitted || form.confirmNewPassword.$touched">
+                        <div class="text-danger" ng-show="form.confirmNewPassword.$error.required">Esse campo é obrigatório</div>
+                        <div class="text-danger" ng-show="form.confirmNewPassword.$error.validator">As senhas não coincidem.</div>
+                    </div>
+                    <div class="margin-top-5">
+                        <button type="button" class="btn btn-danger btn-xs" ng-click="homeAccount.cancelChangePassword()"><i class="fa fa-times"></i> Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-3"></div>
+            <div class="col-md-8 text-right">
+                <button type="submit" ng-click="homeAccount.saveChanges(form)" class="btn btn-primary">Salvar alterações</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

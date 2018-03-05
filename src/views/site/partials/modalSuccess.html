@@ -1,0 +1,16 @@
+<div>
+    <div class="modal-header">
+        <i class="glyphicon glyphicon-ok"></i>
+    </div>
+    <div class="modal-title">
+        <span ng-bind-html="$model.title"></span>
+    </div>
+
+    <div class="modal-body">
+        <p ng-bind-html="$model.message"></p>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" ng-click="ok()">OK</button>
+    </div>
+</div>

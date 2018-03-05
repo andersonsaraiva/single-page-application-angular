@@ -1,0 +1,39 @@
+<div class="wrapper">
+    <div class="content-login">
+        <div class="panel">
+            <div class="panel-heading">
+                <img src="img/logobranco.png" class="img-140" alt="Fairfax">
+            </div>
+            <div class="panel-body">
+                <p>Digite seu Email e Senha para entrar</p>
+                <form novalidate name="form">
+                    <div class="form-group has-feedback" ng-class="{ 'has-error': form.userName.$invalid && (form.$submitted || form.userName.$touched) }">
+                        <input type="text" ng-model="login.loginData.userName" class="form-control" name="userName" id="userName" placeholder="Email" required>
+                        <span class="fa fa-envelope form-control-feedback text-muted"></span>
+
+                        <div ng-show="form.$submitted || form.userName.$touched">
+                            <div class="text-danger" ng-show="form.userName.$error.required">Esse campo é obrigatório</div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback" ng-class="{ 'has-error': form.password.$invalid && (form.$submitted || form.password.$touched) }">
+                        <input type="password" class="form-control" name="password" id="password" ng-model="login.loginData.password" placeholder="Senha" required>
+                        <span class="fa fa-lock form-control-feedback text-muted"></span>
+
+                        <div ng-show="form.$submitted || form.password.$touched">
+                            <div class="text-danger" ng-show="form.password.$error.required">Esse campo é obrigatório</div>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="pull-right margin-b-20">
+                            <a class="text-muted" ui-sref="app.forgotPassword">Esqueceu a Senha?</a>
+                        </div>
+                    </div>
+                    <button class="btn btn-block btn-primary" ng-click="login.doLogin(form)" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <span>© {{$state.current.data.dateCurrent}} - Fairfax</span>
+        </div>
+    </div>
+</div>

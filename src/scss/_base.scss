@@ -1,0 +1,96 @@
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: $default-font;
+    background: $white;
+    font-size: 14px;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: #666;
+}
+
+.body-login {
+    background: #F7f7f7;
+}
+
+html {
+    height: auto;
+    .body-site {
+        background: #f2f2f2;
+        height: auto;
+    }
+}
+
+a,
+button {
+    @include transition(all 0.3s);
+    text-decoration: none;
+}
+
+a {
+    color: $skin-color;
+    cursor: pointer;
+}
+
+a,
+a:hover,
+a:focus,
+button:hover,
+button:focus {
+    outline: 0 !important;
+    text-decoration: none;
+}
+
+blockquote {
+    font-style: normal;
+    font-weight: 400;
+    p {
+        font-weight: 400;
+    }
+}
+
+button:focus {
+    outline: 0 !important;
+}
+
+::-moz-selection {
+    background-color: #337ab7;
+    color: #fff;
+}
+
+::selection {
+    background-color: #337ab7;
+    color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0px;
+    font-family: $default-font;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    line-height: 26px;
+}
+
+hr {
+    margin-left: -35px;
+    margin-right: -35px;
+}
+
+label {
+    font-weight: 500;
+}

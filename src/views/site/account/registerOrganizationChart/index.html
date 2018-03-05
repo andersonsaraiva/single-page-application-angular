@@ -1,0 +1,44 @@
+<div ui-view>
+    <div class="row">
+        <h2 class="col-md-12">Cadastro de Organograma</h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-xs-12">
+            <form class="form-horizontal" name="form" id="form" novalidate>
+                <fieldset>
+                    <div class="form-group" ng-class="{ 'has-error': form.FileImagem.$invalid && (form.$submitted || form.FileImagem.$touched) }">
+                        <label class="col-md-2 control-label"><strong>Imagem</strong></label>
+                        <div class="col-md-10">
+                            <div 
+                                ngf-drop 
+                                ngf-select 
+                                ng-model="registerOrganizationChart.organizationChartModel.FileImagem" 
+                                class="drop-box" 
+                                ngf-drag-over-class="'dragover'" 
+                                ngf-multiple="false" 
+                                ngf-allow-dir="true"
+                                accept="image/*" 
+                                ngf-pattern="'image/*'"
+                                id="FileImagem"
+                                name="FileImagem"
+                                required>
+                                Arraste sua imagem aqui ou clique para carregar.
+                            </div>
+                            <div ng-show="form.$submitted || form.FileImagem.$touched">
+                                <div class="text-danger text-left" ng-show="form.FileImagem.$error.required">Esse campo é obrigatório</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-10 text-right">                    
+                            <button class="btn btn-primary" type="submit" ng-click="registerOrganizationChart.save(form)">
+                                <i class="fa fa-save"></i> Salvar
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

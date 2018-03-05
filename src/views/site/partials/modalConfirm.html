@@ -1,0 +1,10 @@
+<div class="modal-title margin-bottom-10">{{ title }}</div>
+<div class="modal-body padding-bottom-10 border-bottom-primary-2">
+	{{ message }}
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-sm btn-success" ng-if="showYes" ng-click="yes()">Sim</button>
+    <button type="button" class="btn btn-sm btn-danger" ng-if="showNo" ng-click="no()">Não</button>
+    <button type="button" class="btn btn-sm btn-primary" ng-if="showCancel" ng-click="cancel()">Cancelar</button>
+</div>

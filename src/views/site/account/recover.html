@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <div class="content-login">
+        <div class="panel">
+            <div class="panel-heading">
+                <img src="img/logobranco.png" class="img-140" alt="Fairfax">
+            </div>
+            <div class="panel-body">
+                <p>Redefinir sua Senha</p>
+                <form novalidate name="form">
+                    <p class="instructions">Preencha os campos abaixo para redefinir sua senha.</p>
+                    <div class="form-group has-feedback" ng-class="{ 'has-error': form.password.$invalid && (form.$submitted || form.password.$touched) }">
+                        <input type="password" class="form-control" required ng-minlength="6" name="password" id="password" ng-model="recover.request.password" placeholder="Senha">
+                        <span class="fa fa-lock form-control-feedback text-muted"></span>
+                        <div ng-show="form.$submitted || form.password.$touched">
+                            <div class="text-danger" ng-show="form.password.$error.required">Esse campo é obrigatório</div>
+                            <div class="text-danger" ng-show="form.password.$error.minlength">A senha deve conter no minimo 6 caracteres.</div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" ng-model="recover.request.confirmPassword" ui-validate='"recover.validatePassword($value, recover.request.password)"' ui-validate-watch='"recover.request.password"' required placeholder="Confirme sua Senha">
+                        <span class="fa fa-lock form-control-feedback text-muted"></span>
+                        <div ng-show="form.$submitted || form.confirmPassword.$touched">
+                            <div class="text-danger" ng-show="form.confirmPassword.$error.required">Esse campo é obrigatório</div>
+                            <div class="text-danger" ng-show="form.confirmPassword.$error.validator">As senhas não coincidem.</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-block btn-danger" ng-click="recover.changePassword(form)" type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <span>© {{$state.current.data.dateCurrent}} - Fairfax</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="mainController as main">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="I4Pro Insurance for Professionals">
+    <meta name="copyright" content="I4Pro Insurance for Professionals" />
+    <meta name="indexation" content="All" />
+    <meta name="robots" content="index, follow">    
+    <title page-title></title>
+    <link href="img/favicon.ico" rel="shortcut icon" type="image">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+</head>
+
+<body ng-class="$state.current.data.specialClass">
+    <div ui-view></div>
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/moment/moment-with-locales.min.js"></script>
+    <script src="lib/angular-ui-router/angular-ui-router.min.js"></script>
+    <script src="lib/angular-animate/angular-animate.min.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="lib/angular-touch/angular-touch.min.js"></script>
+    <script src="lib/angular-ui-utils/ui-utils.min.js"></script>
+    <script src="lib/ngstorage/ngStorage.min.js"></script>
+    <script src="lib/angular-breadcrumb/angular-breadcrumb.min.js"></script>
+    <script src="lib/angular-loading-bar/loading-bar.min.js"></script>
+    <script src="lib/oclazyload/ocLazyLoad.min.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="lib/lodash/lodash.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config/config.js"></script>
+    <script src="scripts/config/lazyLoad.js"></script>
+    <script src="scripts/config/router.js"></script>
+
+    <script src="scripts/directives/pageTitle.js"></script>
+    <script src="scripts/directives/widget.js"></script>
+
+    <script src="scripts/filters/propsFilter.js"></script>
+    <script src="scripts/filters/propsOrderBy.js"></script>
+
+    <script src="scripts/services/shared/modalService.js"></script>
+    <script src="scripts/services/shared/messageService.js"></script>
+
+    <script src="scripts/controllers/mainController.js"></script>
+    <script src="scripts/controllers/datePickerController.js"></script>
+</body>
+</html>

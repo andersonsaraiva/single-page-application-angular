@@ -1,0 +1,64 @@
+<div ui-view>
+    <div class="row">
+        <h2 class="col-md-12">Cadastro de Usuário</h2>
+    </div>
+    <div class="row">
+        
+        <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="input-group">
+                <input ng-model="registerUser.filtroUsuario.Termo" type="text" class="form-control" placeholder="Digite para pesquisar...">
+                <span class="input-group-btn">
+                    <button class="btn btn-info" type="button" ng-click="registerUser.new()">
+                        <i class="fa fa-plus"></i> Novo
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <hr class="wide">
+
+    <div class="row" ng-show="registerUser.usuariosVisualizacao.length <= 0  && registerUser.filtroUsuario.Termo != ''">
+        <div class="col-sm-12">
+            <div class="bordered-well-container mensagem-itens-encontrados">
+                <div class="padding-5">
+                    <h4 class="block no-margin text-align-center"><i class="fa fa-exclamation-triangle"></i> Nenhum Usuário encontrado!</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-show="registerUser.usuariosVisualizacao.length > 0">
+        <div class="col-lg-12 col-md-12 col-xs-12" ng-repeat="user in registerUser.usuariosVisualizacao | filter: registerUser.search">
+            <div class="boxUser">
+                <label class="text-license">
+                    <strong>Usuário:</strong> <span ng-bind-html="user.Nome | highlight: registerUser.filtroUsuario.Termo"></span>
+                    <br>
+                    <strong>Email:</strong> <span ng-bind-html="user.Email"></span>
+                </label>
+                <div class="acoesBotoes">
+                    <button class="btn btn-danger btn-xs tooltip-danger" ng-click="registerUser.delete(user)" tooltip-placement="top" uib-tooltip="Excluir">
+                        <i class="fa fa-remove"></i>
+                    </button>
+                    <button class="btn btn-primary btn-xs tooltip-primary" ng-click="registerUser.details(user)" tooltip-placement="top" uib-tooltip="Detalhes">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-show="registerUser.usuariosFiltrados.length > registerUser.numeroPorPagina">
+        <div class="col-lg-12 col-md-12 col-xs-12 text-center">
+            <uib-pagination 
+                ng-model="registerUser.paginacao.paginaCorrente"
+                total-items="registerUser.usuariosFiltrados.length"
+                items-per-page="registerUser.numeroPorPagina"
+                max-size="registerUser.maximoPorPagina"
+                boundary-links="true"
+                previous-text="Anterior"
+                next-text="Próximo"
+                first-text="Primeiro"
+                last-text="Último">
+            </uib-pagination>
+        </div>
+    </div>
+</div>
