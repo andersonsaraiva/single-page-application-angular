@@ -1,6 +1,7 @@
 para iniciar o projeto precisamos instalar algumas dependencias, como por exemplo:
 
 1 - NodeJs : https://nodejs.org/en/
+
 2 - Ruby : https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.4.3-1/rubyinstaller-2.4.3-1-x64.exe
 
 3 - Após a instalação do Ruby escolher a opção 1.
